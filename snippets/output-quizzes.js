@@ -25,3 +25,8 @@
 // // Output: '[ <10 empty items> ]'
 // console.log(arr2.length);
 // // Output: '10'
+
+// // - - - -
+// let a = -true;
+// console.log(a);
+// // Output: -1
