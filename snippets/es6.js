@@ -64,6 +64,7 @@ const purple = new Colour("Purple")
 // Global scope 'this'
 purple.getName()
 // => undefined
+
 // Class scope 'this'
 purple.getNameArrowFunc()
 // => Purple
