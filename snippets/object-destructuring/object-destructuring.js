@@ -43,7 +43,6 @@ console.log(`${name.firstName} is currently ${currentMood}.`);
 const {
   favourite: {
     colours: { first, second: secondFavColour, third: potatoes },
-    numbers,
   },
 } = bobby;
 console.log(first);
