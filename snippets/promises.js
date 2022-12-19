@@ -57,9 +57,9 @@ someFunc(
 const somePromise = () => {
   return new Promise((resolve, reject) => {
     if (someError) {
-      resolve("Some error occured!");
+      reject("Some error occured! Promise rejected.");
     } else {
-      reject("It worked!");
+      resolve("It worked! Promise resolved.");
     }
   });
 };
@@ -67,21 +67,21 @@ const somePromise = () => {
 someError = true;
 
 somePromise()
-  .then((errorMessage) => {
-    console.log("Promise error: " + errorMessage);
-  })
-  .catch((successMesssage) => {
+  .then((successMesssage) => {
     console.log("Promise success: " + successMesssage);
+  })
+  .catch((errorMessage) => {
+    console.log("Promise error: " + errorMessage);
   });
-// => Promise error: Some error occured!
+// => Some error occured! Promise rejected.
 
 someError = false;
 
 somePromise()
-  .then((errorMessage) => {
-    console.log("Promise error: " + errorMessage);
-  })
-  .catch((successMesssage) => {
+  .then((successMesssage) => {
     console.log("Promise success: " + successMesssage);
+  })
+  .catch((errorMessage) => {
+    console.log("Promise error: " + errorMessage);
   });
-// => Promise success: It worked!
+// => Promise success: It worked! Promise resolved.
