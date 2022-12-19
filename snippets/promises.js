@@ -53,6 +53,8 @@ someFunc(
 // => Success: It worked
 
 // Convert to a promise
+// Note the resolve/reject parameter can be an object with key/value pairs.
+// You can then return specific values from that object in the .then() and .catch().
 
 const somePromise = () => {
   return new Promise((resolve, reject) => {
