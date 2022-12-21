@@ -87,3 +87,27 @@ somePromise()
     console.log("Promise error: " + errorMessage);
   });
 // => Promise success: It worked! Promise resolved.
+
+// Promise.all and Promise.race
+
+const promiseOne = new Promise((resolve, reject) => {
+  resolve("Promise one resolved!");
+});
+
+const promiseTwo = new Promise((resolve, reject) => {
+  resolve("Promise two resolved!");
+});
+
+const promiseThree = new Promise((resolve, reject) => {
+  resolve("Promise three resolved!");
+});
+
+Promise.all([promiseOne, promiseTwo, promiseThree]).then((successMessages) => {
+  console.log(successMessages);
+});
+// => ['Promise one resolved!', 'Promise two resolved!', 'Promise three resolved!']
+
+Promise.race([promiseOne, promiseTwo, promiseThree]).then((successMessage) => {
+  console.log("At least one promise resolved: " + successMessage);
+});
+// => At least one promise resolved: Promise one resolved!
