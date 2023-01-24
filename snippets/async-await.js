@@ -1,6 +1,12 @@
 // 'async' always returns a promise even without 'await'
 async function someFunc() {
-  // empty function
+  return 1234;
+  // same as explicitly returning a promise:
+  // return Promise.resolve(1234);
 }
 
-someFunc().then(console.log("I am from someFunc."));
+someFunc().then((response) => {
+  console.log(response);
+});
+
+// => 1234
