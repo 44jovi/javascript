@@ -18,9 +18,9 @@ async function someFunc2() {
     setTimeout(() => resolve("Promise resolved after waiting 1000ms!"), 1000);
   });
 
-  let resposne = await promise;
+  let response = await promise;
 
-  console.log(resposne);
+  console.log(response);
 }
 
 someFunc2();
