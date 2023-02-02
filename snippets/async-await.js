@@ -11,7 +11,7 @@ someFunc1().then((response) => {
 
 // => 1234
 
-// 'await' waits until a promise is fulfilled before it returns its result
+// 'await' waits (suspends the function) until a promise is fulfilled before it returns its result
 
 async function someFunc2() {
   let promise = new Promise((resolve) => {
@@ -24,3 +24,22 @@ async function someFunc2() {
 }
 
 someFunc2();
+
+// Example of using await on a class with a 'then' method
+
+class AddOne {
+  constructor(number) {
+    this.number = number;
+  }
+  then(resolve, reject) {
+    // resolve(this.number + 1);
+    setTimeout(() => resolve(this.number + 1), 2000);
+  }
+}
+
+async function UseAddOne() {
+  let result = await new AddOne(10);
+  console.log(result + " is the result, after waiting 2000ms!");
+}
+
+UseAddOne();
