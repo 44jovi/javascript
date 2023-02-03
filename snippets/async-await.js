@@ -43,3 +43,15 @@ async function UseAddOne() {
 }
 
 UseAddOne();
+
+// Example of an async method in a class
+
+class HelloThere {
+  async say() {
+    return await Promise.resolve("Hello there.");
+  }
+}
+
+const helloThere = new HelloThere();
+
+helloThere.say().then((result) => console.log(result));
